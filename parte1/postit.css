@@ -5,15 +5,11 @@ body {
 }
 
 .lavagna {
-  width: 200%; /* Larghezza completa del contenitore */
+  width: 200%;
   background-color: rgb(102, 102, 102);
   padding: 20px;
   display: flex;
   flex-wrap: wrap; /* Abilita il wrap per far andare i post-it a capo */
-}
-
-.column {
-  width: 50%; /* Larghezza di ogni colonna */
 }
 
 .post-it {
@@ -25,7 +21,7 @@ body {
   margin-right: 10px; /* Spazio tra i post-it */
   margin-bottom: 42px; /* Spazio tra le righe di post-it */
   position: relative; /* Posizionamento relativo per il testo aggiuntivo */
-  display: flex; /* Usiamo flex per centrare il testo verticalmente */
+  display: flex; /* flex per centrare il testo verticalmente */
   align-items: center; /* Centra il testo verticalmente */
   box-shadow: 0px 15px 22px black;
   padding-inline: 1px;
@@ -48,12 +44,17 @@ body {
   width: 100%; /* Occupa tutto lo spazio disponibile */
 }
 
+.titolo {
+  font-size: 50px;
+  margin-top: -327px;
+}
+
 .additional-text {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  font-size: 30px; /* Riduce ulteriormente la dimensione del testo aggiuntivo */
+  font-size: 30px; /* Dimensione del testo aggiuntivo */
   text-align: center;
   padding-bottom: 95px;
 }
@@ -106,9 +107,4 @@ body {
 
   transform: scale(1.2);
   z-index: 2; /* Imposta uno z-index più alto per far apparire il post-it sopra gli altri */
-}
-
-.titolo {
-  font-size: 50px;
-  margin-top: -327px;
 }
