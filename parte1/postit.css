@@ -1,0 +1,114 @@
+body {
+  font: 20px "Indie Flower";
+  display: flex;
+  padding: 24px;
+}
+
+.lavagna {
+  width: 200%; /* Larghezza completa del contenitore */
+  background-color: rgb(102, 102, 102);
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap; /* Abilita il wrap per far andare i post-it a capo */
+}
+
+.column {
+  width: 50%; /* Larghezza di ogni colonna */
+}
+
+.post-it {
+  width: calc(25% - 10px); /* Larghezza calcolata per avere 4 post-it in una colonna con spazio tra di loro */
+  padding-top: calc(25% - 10px); /* Altezza uguale alla larghezza per rendere il post-it quadrato */
+  background-color: #ffffcc; /* Colore di base */
+  cursor: pointer;
+  transition: transform 0.3s ease; /* Transizione fluida */
+  margin-right: 10px; /* Spazio tra i post-it */
+  margin-bottom: 42px; /* Spazio tra le righe di post-it */
+  position: relative; /* Posizionamento relativo per il testo aggiuntivo */
+  display: flex; /* Usiamo flex per centrare il testo verticalmente */
+  align-items: center; /* Centra il testo verticalmente */
+  box-shadow: 0px 15px 22px black;
+  padding-inline: 1px;
+  z-index: 1; /* Imposta lo z-index predefinito */
+}
+
+.post-it:nth-child(4n) {
+  margin-right: 0; /* Rimuove il margine destro del quarto post-it di ogni colonna */
+}
+
+.column:last-child .post-it {
+  margin-right: 0; /* Rimuove il margine destro dei post-it nell'ultima colonna */
+}
+
+.post-it span {
+  text-align: center;
+  overflow: hidden; /* Nasconde il testo che supera il bordo */
+  white-space: nowrap; /* Evita che il testo vada a capo */
+  text-overflow: ellipsis; /* Aggiunge puntini di sospensione se il testo supera il bordo */
+  width: 100%; /* Occupa tutto lo spazio disponibile */
+}
+
+.additional-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  font-size: 30px; /* Riduce ulteriormente la dimensione del testo aggiuntivo */
+  text-align: center;
+  padding-bottom: 95px;
+}
+
+.primo {
+  height: 11px;
+  background-color: #fafbc9;
+  transform: rotate(-4deg);
+}
+
+.secondo {
+  height: 11px;
+  background-color: #c9fbca;
+  transform: rotate(4deg);
+}
+.terzo {
+  height: 11px;
+  background-color: #c4c5f0;
+}
+.quarto {
+  background-color: #c9fbca;
+  transform: rotate(4deg);
+  height: 11px;
+}
+.quinto {
+  background-color: #fafbc9;
+  transform: rotate(-4deg);
+  height: 11px;
+}
+.sesto {
+  background-color: #c4c5f0;
+  transform: rotate(-4deg);
+  height: 11px;
+}
+.settimo {
+  background-color: #fafbc9;
+  transform: rotate(-7deg);
+  height: 11px;
+}
+.ottavo {
+  background-color: #c9fbca;
+  transform: rotate(3deg);
+  height: 11px;
+}
+
+.post-it:hover {
+  /* abbiamo inserito transform per modificarlo al passaggio del mouse */
+  /* Quando il mouse passa sopra un post-it, la regola :hover viene attivata, e il  */
+  /* post-it corrente viene ingrandito del 20% rispetto alle sue dimensioni originali grazie alla trasformazione scale(1.2). */
+
+  transform: scale(1.2);
+  z-index: 2; /* Imposta uno z-index più alto per far apparire il post-it sopra gli altri */
+}
+
+.titolo {
+  font-size: 50px;
+  margin-top: -327px;
+}
